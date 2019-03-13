@@ -32,7 +32,7 @@ public class Framework {
     public static String username = "sonali.dutta1";
     public static String authkey = "u4QqoEX92figo4CeGUb2AnZD9wLnHK0SNWN2GqXLt1aXOI8QsR";
     public static RemoteWebDriver driver = null;
-    public static String gridURL = "@hub.lambdatest.com/wd/hub";
+    public static String gridURL = "@beta.lambdatest.com/wd/hub";
     //private static WebDriver webDriver = null;
 
     private Framework() {
