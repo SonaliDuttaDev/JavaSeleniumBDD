@@ -31,7 +31,7 @@ public class Framework {
     private static final Logger logger = Logger.getLogger(Framework.class);
     public static String username = "sonali.dutta1";
     public static String authkey = "u4QqoEX92figo4CeGUb2AnZD9wLnHK0SNWN2GqXLt1aXOI8QsR";
-    public static RemoteWebDriver driver = null;
+    public static RemoteWebDriver webDriver = null;
     public static String gridURL = "@beta.lambdatest.com/wd/hub";
     //private static WebDriver webDriver = null;
 
@@ -60,7 +60,7 @@ public class Framework {
         capabilities.setCapability("video", true); // To enable video recording
         capabilities.setCapability("console", true); // To capture console logs
         try {
-            driver = new RemoteWebDriver(new URL("https://" + username + ":" + authkey + gridURL), capabilities);
+            webDriver = new RemoteWebDriver(new URL("https://" + username + ":" + authkey + gridURL), capabilities);
         } catch (MalformedURLException e) {
             System.out.println("Invalid grid URL");
         } catch (Exception e) {
