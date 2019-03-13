@@ -19,8 +19,11 @@ import java.time.LocalDate;
 public class Framework {
 
     private static final Logger logger = Logger.getLogger(Framework.class);
-
-    private static WebDriver webDriver = null;
+public String username = "sonali.dutta1";
+    public String authkey = "u4QqoEX92figo4CeGUb2AnZD9wLnHK0SNWN2GqXLt1aXOI8QsR";
+    public static RemoteWebDriver driver = null;
+    public String gridURL = "@hub.lambdatest.com/wd/hub";
+    //private static WebDriver webDriver = null;
 
     private Framework() {
         // Private constructor to hide the default implicit constructor.
@@ -28,14 +31,31 @@ public class Framework {
     }
 
     public static void init()  {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriverlinux");
+        /*System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriverlinux");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.setHeadless(true);
         chromeOptions.addArguments("--window-size=1366x768");
         chromeOptions.setExperimentalOption("useAutomationExtension", false);
         webDriver = new ChromeDriver(chromeOptions);
-        webDriver.manage().window().maximize();
+        webDriver.manage().window().maximize();*/
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", "chrome");
+        capabilities.setCapability("version", "70.0");
+        capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get the any available one
+        capabilities.setCapability("build", "LambdaTestSampleApp");
+        capabilities.setCapability("name", "LambdaTestJavaSample");
+        capabilities.setCapability("network", true); // To enable network logs
+        capabilities.setCapability("visual", true); // To enable step by step screenshot
+        capabilities.setCapability("video", true); // To enable video recording
+        capabilities.setCapability("console", true); // To capture console logs
+        try {
+            driver = new RemoteWebDriver(new URL("https://" + username + ":" + accesskey + gridURL), capabilities);
+        } catch (MalformedURLException e) {
+            System.out.println("Invalid grid URL");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static WebDriver getWebDriver()  {
