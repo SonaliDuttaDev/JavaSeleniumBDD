@@ -62,7 +62,7 @@ public class Framework {
         try {
             webDriver = new RemoteWebDriver(new URL("https://" + username + ":" + authkey + gridURL), capabilities);
         } catch (MalformedURLException e) {
-            System.out.println("Invalid grid URL");
+            System.out.println("Invalid grid URL" + gridURL);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
