@@ -64,7 +64,7 @@ public class Framework {
         } catch (MalformedURLException e) {
             System.out.println("Invalid grid URL" + gridURL);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage() + gridURL);
         }
     }
 
