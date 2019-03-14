@@ -61,7 +61,7 @@ public class Framework {
         capabilities.setCapability("console", true); // To capture console logs
         try {
             System.out.println("gridUrL " + gridURL);
-            webDriver = new RemoteWebDriver(new URL("https://" + username + ":" + authkey + gridURL), capabilities);
+            webDriver = new RemoteWebDriver(new URL("http://" + username + ":" + authkey + gridURL), capabilities);
         } catch (MalformedURLException e) {
             System.out.println("Invalid grid URL" + gridURL);
         } catch (Exception e) {
