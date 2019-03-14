@@ -65,7 +65,7 @@ public class ConnectionSteps {
     } 
     
     @Then("user closes browser")
-    public void user_takes_a_screenshot_3() {
+    public void user_destroy() {
         Framework.destroy();
     } 
 }
