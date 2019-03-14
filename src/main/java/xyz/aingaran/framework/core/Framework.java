@@ -61,7 +61,7 @@ public class Framework {
         capabilities.setCapability("video", true); // To enable video recording
         capabilities.setCapability("console", true); // To capture console logs
         capabilities.setCapability("idleTimeout", 270); //To increase the idle timeout
-        capabilities.setCapability("visual",true);
+        //capabilities.setCapability("visual",true);
         try {
             System.out.println("gridUrL " + gridURL);
             webDriver = new RemoteWebDriver(new URL("http://" + username + ":" + authkey + gridURL), capabilities);
