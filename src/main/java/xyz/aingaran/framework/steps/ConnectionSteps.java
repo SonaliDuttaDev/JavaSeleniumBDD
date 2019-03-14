@@ -63,4 +63,9 @@ public class ConnectionSteps {
     public void user_takes_a_screenshot_3() {
         Framework.takeScreenShot("pwa", "page3");
     } 
+    
+    @Then("user closes browser")
+    public void user_takes_a_screenshot_3() {
+        Framework.destroy();
+    } 
 }
