@@ -60,6 +60,7 @@ public class Framework {
         capabilities.setCapability("video", true); // To enable video recording
         capabilities.setCapability("console", true); // To capture console logs
         try {
+            System.out.println("gridUrL " + gridURL);
             webDriver = new RemoteWebDriver(new URL("https://" + username + ":" + authkey + gridURL), capabilities);
         } catch (MalformedURLException e) {
             System.out.println("Invalid grid URL" + gridURL);
